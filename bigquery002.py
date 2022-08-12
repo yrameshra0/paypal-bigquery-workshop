@@ -16,6 +16,6 @@ job_config.schema = [
 ]
 
 job_config.source_format = bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
-load_config = client.load_table_from_uri(gcs_uri, table, job_config=job_config)
+load_job = client.load_table_from_uri(gcs_uri, table, job_config=job_config)
 
 print('JSON File Loaded to Big Query by Us')
