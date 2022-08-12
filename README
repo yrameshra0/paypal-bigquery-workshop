@@ -9,3 +9,11 @@ which gcloud
 gcloud auth login --no-launch-browser 
 gcloud config set project techlanders-aug22
 gcloud compute instances list --format='table(name,status,tags.list())'
+
+## Open BigQuery and run below query 
+SELECT name, SUM(number) as total_people
+    FROM `bigquery-public-data.usa_names.usa_1910_2013`
+    WHERE state = 'TX'
+    GROUP BY name, state
+    ORDER BY total_people DESC
+    LIMIT 20
