@@ -27,3 +27,10 @@ gcloud iam service-accounts create USER-bigquery-sa --display-name "USER bigquer
 gcloud iam service-accounts keys create ~/key.json --iam-account USER-bigquery-sa@${PROJECT_ID}.iam.gserviceaccount.com
 gcloud projects add-iam-policy-binding ${PROJECT_ID} --member "serviceAccount:USER-bigquery-sa@${PROJECT_ID}.iam.gserviceaccount.com"  --role "roles/bigquery.user"
 export GOOGLE_APPLICATION_CREDENTIALS=~/key.json
+
+## python integration 
+export GOOGLE_APPLICATION_CREDENTIALS=~/key.json
+sudo apt install python3-pip
+pip3 install --upgrade google-cloud-bigquery
+wget https://raw.githubusercontent.com/Jaibw/bigquery/master/bigquery001.py 
+python3 bigquery001.py  
