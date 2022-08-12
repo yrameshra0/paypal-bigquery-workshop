@@ -1,0 +1,6 @@
+# Install gcloud tool - https://cloud.google.com/sdk/docs/install#deb 
+sudo apt update 
+sudo apt install wget -y 
+wget https://raw.githubusercontent.com/Jaibw/bigquery/master/install-gcloud.sh 
+sh install-gcloud.sh 
+which gcloud 
